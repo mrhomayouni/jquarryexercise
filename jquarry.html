@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuarry</title>
+    <script src="jquery-3.6.0.min.js"></script>
+    <style>
+        .pr7 {
+            display: none;
+            background-color: #00aced;
+        }
+        #animat{
+            background-color: #00a1b5;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<p id="p1 " class="pr1"> Paragraph 1 </p>
+<p id="p2" class="pr2"> Paragraph 2 </p>
+<p id="p3 " class="pr3"> Paragraph 3 </p>
+<p id="p4" class="pr4"> Paragraph 4 </p>
+<p id="p5 " class="pr5"> Paragraph 5 </p>
+<p id="p6" class="pr6"> Paragraph 6 </p>
+<p id="p7 " class="pr7"> Paragraph 7 </p>
+<p id="p8" class="pr8"> Paragraph 8 </p>
+Enter your name: <input type="text"> <span>Keypresses: <span id="span1">0</span></span>
+<div id="animat"> </div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<p id="p11 " class="pr11"> Paragraph 11 </p>
+<p id="p12" class="pr12"> Paragraph 12 </p>
+<p id="p13 " class="pr13"> Paragraph 13 </p>
+<p id="p14" class="pr14"> Paragraph 14 </p>
+<p id="p15 " class="pr15"> Paragraph 15 </p>
+<p id="p16" class="pr16"> Paragraph 16 </p>
+
+
+<button id="btn1" class="b1"> button1</button>
+<button id="btn2" class="b2"> button2</button>
+<button id="btn3" class="b3"> button3</button>
+<button id="btn4" class="b4"> button4</button>
+<button id="btn5" class="b5"> button5</button>
+<button id="btn6" class="b6"> button6</button>
+<button id="btn7" class="b7"> button7</button>
+<button id="btn8" class="b8"> button8</button>
+<button id="btn10" class="b10"> button10</button>
+<button id="btn11" class="b11"> button11</button>
+<button id="btn12" class="b12"> button12</button>
+<button id="btn13" class="b13"> button13</button>
+<button id="btn14" class="b14"> button14</button>
+<button id="btn15" class="b15"> button15</button>
+<script>
+
+    $(document).ready(function () {
+        $("#btn1").click(function () {
+            $(".pr1").hide();
+        });
+
+        $("#btn2").click(function () {
+            $("#p2").append("<b>Appended text</b>");
+        });
+
+        $("#btn3").click(function () {
+            $(".pr3").prepend("<b>prepended text</b>");
+        });
+        $("#btn4").click(function () {
+            $("#p4").text("new Paragraph");
+        });
+        $("#btn5").mouseenter(function () {
+            $(".pr5").css("background-color", "red");
+        });
+        $("#btn5").mouseleave(function () {
+            $(".pr5").css("background-color", "white");
+        });
+
+        $("#btn6").click(function () {
+            $("#p6").slideUp(3000);
+        });
+        $("#btn7").click(function () {
+            $(".pr7").slideDown(3000);
+        });
+        $("#btn8").click(function () {
+            $("#p8").slideToggle(3000);
+        });
+        i = 0;
+        $("input").keypress(function () {
+            $("#span1").text(i += 1);
+            $("input").keydown(function () {
+                $("input").css("background-color", "yellow");
+            });
+            $("input").keyup(function () {
+                $("input").css("background-color", "pink");
+            });
+        });
+        $("#btn10").click(function () {
+            $("#animat").animate({ height:"150px",width:"150px"  });
+        });
+        $("#btn11").click(function () {
+            $(".pr11").css("background-color","pink").fadeOut(3000).fadeIn(3000);
+        });
+        $("#btn12").click(function () {
+            $("p:first").css("background-color","#00FFFF");
+        });
+        $("#btn13").click(function () {
+            $("p:last").css("background-color","khaki");
+        });
+        $("#btn14").click(function () {
+            $("p:even").css("background-color","pink");
+        });
+        $("#btn15").click(function () {
+            $("p:odd").css("background-color","yellow");
+        });
+
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>
